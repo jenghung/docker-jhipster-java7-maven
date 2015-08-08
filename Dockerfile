@@ -1,4 +1,4 @@
-FROM dockerfile/java:openjdk-7-jdk
+FROM java:openjdk-7-jdk
 MAINTAINER JengHung Chen <jenghung.chen@gmail.com>
 
 RUN apt-get update && apt-get install -y maven
