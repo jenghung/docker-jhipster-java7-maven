@@ -9,7 +9,7 @@ RUN npm install -g yo bower generator-jhipster@2.19.0 grunt-cli gulp
 
 RUN adduser --disabled-password --gecos "" jhipster
 
-RUN mkdir /home/jhipster/project/
+RUN mkdir /home/jhipster/project/ && chown jhipster:jhipster /home/jhipster/project/
 
 EXPOSE 8080
 
