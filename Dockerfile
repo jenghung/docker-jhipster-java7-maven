@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y maven
 
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash - && apt-get install -y nodejs
 
-RUN npm install -g yo bower generator-jhipster@2.7.0 grunt-cli gulp
+RUN npm install -g yo bower generator-jhipster@2.19.0 grunt-cli gulp
 
 RUN adduser --disabled-password --gecos "" jhipster
 
