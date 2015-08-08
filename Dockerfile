@@ -9,15 +9,13 @@ RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-s
 
 RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
 
-RUN apt-get install -y --force-yes oracle-java7-installer maven
+RUN apt-get install -y --force-yes oracle-java7-installer maven curl
 
-RUN curl --silent --location https://deb.nodesource.com/setup_0.12 | bash - && apt-get install --yes nodejs
+RUN curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash - && apt-get install --yes nodejs
 
 RUN npm install -g yo bower generator-jhipster@2.19.0 grunt-cli gulp
 
 RUN adduser --disabled-password --gecos "" jhipster
-
-RUN mkdir /home/jhipster/project/ && chown jhipster:jhipster /home/jhipster/project/
 
 EXPOSE 8080
 
@@ -27,4 +25,4 @@ WORKDIR /home/jhipster
 
 USER jhipster
 
-VOLUME ["/home/jhipster/project"]
+VOLUME ["/home/jhipster"]
